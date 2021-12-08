@@ -4,9 +4,18 @@ defmodule GuessingGame do
     answer = IO.gets "Hmm...The answer has to be #{mid(low, high)} \n"
 
     case String.trim(answer) do
-      "bigger" -> bigger(low, high)
-      "smaller" -> smaller(low, high)
-      "yes" -> "Yay, I knew it"
+
+      "bigger"
+        -> bigger(low, high)
+
+      "smaller"
+        -> smaller(low, high)
+
+      "yes"
+        -> "Yay, I knew I could get it"
+
+        _ -> IO.puts ~s( Type "bigger", "smaller" or "yes")
+        guess(low, high)
     end
   end
 
